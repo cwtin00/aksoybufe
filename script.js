@@ -44,7 +44,6 @@ const menuData = {
         { n: "Sucuk Kaşar", p: "210,00 ₺", d: "Sucuk ve kaşar peyniri uyumu" },
         { n: "Sucuk Kaşar Yumurta", p: "230,00 ₺", d: "Sucuk, kaşar ve taze yumurta" },
         { n: "Tam Ekmek Karışık Sandviç", p: "320,00 ₺", d: "Büyük boy doyurucu tam ekmek" },
-        { n: "Tam Ekmek Karışık Sandviç (Y)", p: "320,00 ₺", d: "Tam ekmek karışık alternatif" },
         { n: "Tombul Karışık", p: "210,00 ₺", d: "Tombul ekmek arası bol malzeme" },
         { n: "Yarım Ekmek Karışık", p: "210,00 ₺", d: "Standart boy karışık sandviç" },
         { n: "Yumurtalı Karışık Sandviç", p: "230,00 ₺", d: "Taze yumurta eklenmiş karışık lezzet" }
