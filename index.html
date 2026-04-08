@@ -10,6 +10,30 @@
 </head>
 <body>
 
+<div id="cart-header-wrapper" onclick="toggleCart()">
+    <div id="cart-main-icon">
+        <i class="fas fa-shopping-basket"></i>
+        <span id="cart-count">0</span>
+    </div>
+    <div id="cart-info-hint" class="cart-info-text animate-slide">
+        Toplamı görmek için tıklayın
+    </div>
+</div>
+
+<div id="cart-sidebar">
+    <div class="cart-sidebar-header">
+        <h3><i class="fas fa-shopping-cart"></i> Sepetim</h3>
+        <button onclick="toggleCart()" class="close-cart-btn"><i class="fas fa-times"></i></button>
+    </div>
+    <div id="cart-items"></div>
+    <div class="cart-sidebar-footer">
+        <div class="total-container">
+            <span>Toplam:</span>
+            <span id="cart-total">0,00 ₺</span>
+        </div>
+    </div>
+</div>
+    
 <div class="menu-wrap" id="hamburger-main">
     <input type="checkbox" id="toggler" class="toggler">
     
@@ -17,27 +41,54 @@
     
     <div class="menu-side">
         <div class="menu-inner">
+            <label for="toggler" class="close-menu"><i class="fas fa-times"></i></label>
+
             <div class="menu-header">
+                <img src="image/aksoy-arma.png" alt="Logo" class="panel-mini-logo">
                 <h3>AKSOY MEYDAN</h3>
-                <span>Bilgi Paneli</span>
+                <p class="panel-subtitle">Bilgi Paneli</p>
+            </div>
+            
+            <ul class="nav-list">
+                <li><a href="index.html"><i class="fas fa-home"></i> ANA SAYFA</a></li>
+                <li><a href="index.html"><i class="fas fa-utensils"></i> MENÜ</a></li>
+
+                <li><a href="franchise.html"><i class="fas fa-handshake"></i> FRANCHISE</a></li>
+
+                <li class="accordion-item">
+                    <div class="accordion-link" onclick="toggleAccordion('about-content', 'about-arrow')">
+                        <i class="fas fa-info-circle"></i> 
+                        <span>HAKKIMIZDA</span>
+                        <i class="fas fa-chevron-down arrow" id="about-arrow"></i>
+                    </div>
+                    <div class="accordion-content" id="about-content">
+                        <p>Aksoy Meydan Büfe olarak, Buca'nın kalbinde en taze malzemeler ve yılların tecrübesiyle hizmet veriyoruz. Lezzetimiz meydanın imzasıdır!</p>
+                    </div>
+                </li>
+
+
+                <li class="accordion-item">
+                    <div class="accordion-link" onclick="toggleAccordion('contact-content', 'contact-arrow')">
+                        <i class="fas fa-phone"></i> 
+                        <span>İLETİŞİM</span>
+                        <i class="fas fa-chevron-down arrow" id="contact-arrow"></i>
+                    </div>
+                    <div class="accordion-content" id="contact-content">
+                        <div class="accordion-inner-links">
+                            <a href="tel:+902324261355"><i class="fas fa-phone-alt"></i> 0232 426 13 55</a>
+                            <a href="https://instagram.com/aksoymeydanbufe" target="_blank"><i class="fab fa-instagram"></i> @aksoymeydanbufe</a>
+                        </div>
+                    </div>
+                </li>
                 
-                <label for="toggler" class="close-menu"><i class="fas fa-times"></i></label>
-            </div>
-            <ul>
-                <li><i class="fas fa-clock"></i> <span>08:00 - 02:00</span></li>
-                <li><i class="fas fa-wifi"></i> <span>WiFi: Aksoy_Meydan</span></li>
-                <li><i class="fas fa-map-marker-alt"></i> <span>Buca, İzmir</span></li>
-                <li><hr></li>
-                <li><a href="https://instagram.com/aksoymeydanbufe" target="_blank"><i class="fab fa-instagram"></i> Instagram'da Takip Et</a></li>
-                <li><a href="https://wa.me/902324261355" target="_blank"><i class="fab fa-whatsapp"></i> Destek Hattı</a></li>
+                <li><hr class="panel-hr"></li>
+
+                <li class="info-detail"><i class="fas fa-clock"></i> <span>08:00 - 02:00</span></li>
+                <li class="info-detail"><i class="fas fa-map-marker-alt"></i> <span>Buca, İzmir</span></li>
             </ul>
-            <div class="menu-footer">
-                <p>Powered by <b>Cetinweb</b></p>
-            </div>
         </div>
     </div>
 </div>
-
     <div id="splash-screen">
         <div class="splash-content">
             <h2 class="splash-text">AKSOY MEYDAN BÜFE</h2>
@@ -50,7 +101,7 @@
             <div class="hero-overlay">
                 <span class="status-badge"><i class="fas fa-circle"></i> AÇIK</span>
                 <div class="hero-info">
-                    <h1 class="hero-title">Aksoy Meydan Büfe</h1>
+                   <h1 class="hero-title">Aksoy Meydan Büfe</h1>
                     <p class="hero-subtitle">Lezzetin Meydan Okuyan Hali</p>
                     <div class="hero-stats">
                         <span><i class="fas fa-star"></i> 4.8</span>
@@ -103,6 +154,25 @@
     <i class="fas fa-map-marker-alt"></i>
     <span>Konum</span>
 </a>
+</div>
+<div class="payment-methods">
+    <p class="payment-title">GEÇERLİ ÖDEME YÖNTEMLERİ</p>
+    <div class="payment-grid">
+        <div class="payment-card"><img src="image/sodexo.png" alt="Sodexo"></div>
+        <div class="payment-card"><img src="image/multinet.png" alt="Multinet"></div>
+        <div class="payment-card"><img src="image/setcard.png" alt="Setcard"></div>
+        <div class="payment-card"><img src="image/edenred.png" alt="Edenred"></div>
+        <div class="payment-card"><img src="image/metropol.webp" alt="Metropol"></div>
+        <div class="payment-card"><img src="image/iwallet.png" alt="iWallet"></div>
+        <div class="payment-card"><img src="image/pluxee.png" alt="Pluxee"></div>
+        <div class="payment-card"><img src="image/tokenflex.png" alt="Token Flex"></div>
+    </div>
+</div>
+
+</div> 
+
+
+<div class="footer-bottom">
 </div>
 
         <div class="footer-bottom">

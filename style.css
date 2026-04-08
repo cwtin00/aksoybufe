@@ -193,15 +193,20 @@ body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--dar
 
 
 .close-menu {
-    position: absolute;
-    top: -15px;
-    right: -10px;
-    color: #475569;
-    font-size: 1.4rem;
-    cursor: pointer;
+    position: absolute !important;
+    top: 20px !important;
+    right: 20px !important; /* Panel kenarından içeri çektik */
+    color: #ffb300 !important; /* CetinWeb sarısı */
+    font-size: 1.6rem !important;
+    cursor: pointer !important;
+    z-index: 10002 !important;
     transition: 0.3s;
 }
-.close-menu:hover { color: #ffb300; }
+
+.close-menu:hover {
+    transform: scale(1.1);
+    color: white !important;
+}
 
 
 .menu-side { 
@@ -251,3 +256,693 @@ body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--dar
 .menu-inner hr { border: 0; border-top: 1px solid #1e293b; margin: 10px 0; }
 .menu-footer { position: absolute; bottom: 30px; left: 30px; font-size: 0.75rem; color: #475569; }
 .menu-footer b { color: #ffb300; }
+
+
+#cart-header-wrapper {
+    position: fixed !important; 
+    top: 20px; 
+    right: 80px; 
+    z-index: 10002 !important; 
+    cursor: pointer;
+    
+   
+    display: none !important; 
+    align-items: center;
+    justify-content: center;
+    
+
+    width: 48px;
+    height: 48px;
+    
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    visibility: visible;
+    opacity: 0; 
+}
+#cart-main-icon {
+    background: var(--dark);
+    color: var(--primary);
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,179,0,0.3);
+    transition: transform 0.2s ease;
+}
+
+#cart-main-icon:active {
+    transform: scale(0.9);
+}
+
+
+#cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ef4444;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 800;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--dark);
+}
+
+
+.cart-info-text {
+    font-size: 0.7rem;
+    color: #fff;
+    font-weight: 600;
+    margin-top: 8px;
+    background: #ef4444; 
+    padding: 4px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    position: relative;
+    pointer-events: none; 
+    
+}
+
+
+.cart-info-text::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: 15px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #ef4444;
+}
+
+/* Sepet Paneli (Sidebar) */
+#cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 85%;
+    max-width: 350px;
+    height: 100%;
+    background: white;
+    z-index: 10005; 
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#cart-sidebar.active { 
+    right: 0; 
+}
+
+/* Animasyonlar */
+@keyframes cartShake {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.1) rotate(5deg); }
+    50% { transform: scale(1.1) rotate(-5deg); }
+    75% { transform: scale(1.1) rotate(5deg); }
+    100% { transform: scale(1); }
+}
+
+.shake {
+    animation: cartShake 0.4s ease-in-out;
+}
+
+@keyframes slideHint {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+}
+
+.animate-slide {
+    animation: slideHint 2s infinite ease-in-out;
+}
+
+#cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -110%; 
+    width: 350px;
+    max-width: 90%;
+    height: 100vh;
+    background: #fff;
+    z-index: 100001; 
+    box-shadow: -10px 0 30px rgba(0,0,0,0.15);
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+#cart-sidebar.active {
+    right: 0; 
+}
+
+.cart-sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.close-cart-btn {
+    background: #f1f5f9;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+.add-to-cart-btn {
+    background: #0f172a; 
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.add-to-cart-btn:hover {
+    background: #ffb300; 
+    color: #0f172a;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(255, 179, 0, 0.3);
+}
+
+.add-to-cart-btn i {
+    font-size: 0.8rem;
+}
+
+
+.p-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 9999; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.6s ease;
+}
+
+
+#cart-header-wrapper, 
+#hamburger-main {
+    display: none !important;
+    opacity: 0;
+    z-index: 100; 
+    transition: opacity 0.8s ease;
+}
+
+
+
+
+#cart-header-wrapper {
+    width: 48px;  
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 20px;
+    right: 80px; 
+    z-index: 1000;
+}
+
+
+#cart-main-icon {
+    background: rgba(30, 41, 59, 0.9); 
+    width: 100%; 
+    height: 100%;
+    border-radius: 12px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem; 
+    color: #ffb300; 
+    border: 1px solid rgba(255, 179, 0, 0.4);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+
+#cart-count {
+    top: -5px;
+    right: -5px;
+}
+
+
+.menu-wrap .hamburger {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    
+   
+    width: 48px;  
+    height: 48px;
+    
+    background: rgba(30, 41, 59, 0.9); 
+    border-radius: 12px; 
+    border: 1px solid rgba(255, 179, 0, 0.4); 
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    padding: 0; 
+}
+
+
+.menu-wrap .hamburger > div {
+    width: 20px; 
+    height: 2px;
+}
+
+.menu-wrap .hamburger > div:before,
+.menu-wrap .hamburger > div:after {
+    width: 20px; 
+    height: 2px;
+    background: #ffb300; 
+}
+
+
+#cart-header-wrapper {
+    display: flex !important;
+    flex-direction: column !important; 
+    align-items: center !important; 
+}
+
+
+.cart-info-text {
+    margin-top: 5px !important; 
+    white-space: nowrap !important; 
+}
+
+
+#cart-main-icon {
+    width: 48px !important;   
+    height: 48px !important;  
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;    
+    background: rgba(30, 41, 59, 0.9);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 179, 0, 0.4);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+
+#cart-main-icon i {
+    font-size: 1.3rem !important; 
+    margin: 0 !important;
+}
+
+
+.cart-info-text {
+    position: absolute !important;
+    top: 55px !important; 
+    right: 0 !important;
+    width: auto !important;
+    white-space: nowrap !important;
+}
+
+
+body.compact-menu #cart-header-wrapper, 
+body.compact-menu .menu-wrap .hamburger {
+    transform: scale(0.8); 
+    top: 10px !important; 
+    opacity: 1 !important; 
+    transition: all 0.3s ease;
+}
+
+
+body.compact-menu .cart-info-text {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+}
+
+
+body.compact-menu #cart-count {
+    transform: scale(1.2); 
+}
+
+/* Ana Kapsayıcı */
+.payment-methods {
+    width: 100% !important;
+    margin: 40px 0 20px 0 !important;
+    text-align: center !important;
+    clear: both !important;
+}
+
+.payment-title {
+    font-size: 12px !important;
+    color: #cbd5e1 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    font-weight: 800 !important;
+    margin-bottom: 25px !important;
+    opacity: 0.9 !important;
+}
+
+/* Izgara Düzeni */
+.payment-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 15px !important; /* Kutuların arası ferahlasın */
+    max-width: 600px !important;
+    margin: 0 auto !important;
+}
+
+/* BÜYÜTÜLMÜŞ ÇERÇEVE TASARIMI */
+.payment-card {
+    background: #ffffff !important;
+    width: 105px !important; /* Çerçeveyi büyüttük */
+    height: 60px !important; /* Çerçeveyi büyüttük */
+    border-radius: 14px !important; /* Köşeleri biraz daha yumuşattık */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 4px !important; /* Logoya daha çok alan kalsın diye azalttık */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3) !important;
+    overflow: hidden !important;
+    transition: all 0.3s ease !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Logo İçerik Ayarları */
+.payment-card img {
+    width: 95% !important; /* Kutunun içini %95 dolsun */
+    height: 95% !important;
+    object-fit: contain !important;
+    display: block !important;
+    transition: transform 0.3s ease !important;
+}
+
+/* KÜÇÜK LOGOLARI ÖZEL ZOOM İLE PATLATMA */
+/* Çerçeve büyüdüğü için scale değerlerini de dengeledik */
+.payment-card img[src*="metropol"], 
+.payment-card img[src*="edenred"],
+.payment-card img[src*="pluxee"],
+.payment-card img[src*="tokenflex"],
+.payment-card img[src*="iwallet"] {
+    transform: scale(1.5) !important; /* Bu logoları daha da belirgin yaptık */
+}
+
+/* Hover Efekti: Kart hem büyüsün hem yukarı çıksın */
+.payment-card:hover {
+    transform: translateY(-8px) scale(1.05) !important;
+    box-shadow: 0 10px 25px rgba(255, 179, 0, 0.4) !important;
+}
+
+/* MOBİL GÖRÜNÜM (Cihazlara Tam Uyum) */
+@media (max-width: 480px) {
+    .payment-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important; /* Mobilde 3'lü daha okunaklı olur */
+        padding: 0 10px !important;
+        gap: 12px !important;
+    }
+    .payment-card {
+        width: 100% !important;
+        height: 55px !important; /* Mobilde de çerçeveyi yüksek tuttuk */
+    }
+}
+
+.footer-bottom {
+    display: flex !important;
+    flex-direction: column !important; /* Yazıları alt alta diz */
+    align-items: center !important;    /* Yatayda tam merkeze al */
+    justify-content: center !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin-top: 30px !important;
+    padding-top: 20px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important; /* Üstten ince bir çizgi ayırır, şık durur */
+}
+
+.cetinweb-signature {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    margin-top: 10px !important;
+}
+
+.copyright {
+    margin: 0 !important;
+    font-size: 14px !important;
+    color: #94a3b8 !important;
+}
+
+/* 1. Başlık ve Logoyu Kapsayan Ana Kutu */
+.section-header {
+    display: flex !important;
+    justify-content: center !important; /* Yazıyı tam ortada tutar */
+    align-items: center !important;
+    width: 100% !important;
+    min-height: 130px !important; /* Logo büyük olduğu için alanı genişlettik */
+    position: relative !important; /* Logoyu buna göre konumlandırır */
+    margin-bottom: 30px !important;
+}
+
+/* 2. Kategori Başlığı (Menüler vb.) */
+.section-header h2 {
+    margin: 0 !important;
+    text-align: center !important;
+    font-size: 26px !important;
+    flex-grow: 1 !important;
+    z-index: 1;
+}
+
+/* 3. SAĞDAKİ DEV LOGO */
+.side-logo {
+    position: absolute !important;
+    right: 5px !important; /* En sağa sabitledik */
+    z-index: 2;
+    
+    /* LOGO BOYUTU - Buradan istediğin kadar büyütebilirsin */
+    height: 120px !important; 
+    width: auto !important;
+    object-fit: contain !important;
+    
+    /* Hizalama ve Efektler */
+    margin-top: -10px !important; /* Logoyu daha yukarı çeker */
+    margin-right: -50px;
+    margin-bottom: -25px;
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.3));
+    
+    /* Başlangıçta Görünmez (Fade-in Hazırlığı) */
+    opacity: 0;
+    transform: translateY(15px);
+    
+    /* Hem CSS Animation hem JS Transition desteği */
+    animation: fadeInLogo 1.5s ease-in forwards;
+    animation-delay: 2.5s; /* Açılış ekranından sonra başlar */
+    transition: all 0.5s ease !important;
+}
+
+/* Üstüne gelince hafif büyüme efekti */
+.side-logo:hover {
+    transform: scale(1.1) !important;
+}
+
+/* 4. Yavaşça Belirme Animasyonu */
+@keyframes fadeInLogo {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 5. Mobil Ayarları */
+@media (max-width: 480px) {
+    .side-logo {
+        height: 100px !important; /* Mobilde biraz daha dengeli boyut */
+        right: 0px !important;
+        margin-top: -20px !important;
+    }
+    .section-header {
+        min-height: 110px !important;
+    }
+}
+
+/* Genel Panel Ayarları */
+.menu-side {
+    background: #1e293b; /* Koyu lacivert tonu */
+}
+
+/* Akordiyon Bozulma Engelleyici */
+.accordion-item {
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 5px;
+}
+
+.accordion-link {
+    display: flex !important;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    padding: 12px 0;
+    color: white;
+    font-weight: 600;
+}
+
+.accordion-link .arrow {
+    margin-left: auto;
+    transition: transform 0.3s ease;
+}
+
+/* Yazının Altına Açılması İçin Kritik Ayar */
+.accordion-content {
+    display: block !important;
+    max-height: 0;
+    width: 100% !important;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+}
+
+.accordion-content p {
+    padding: 15px;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #cbd5e1;
+    text-align: left; /* Sağa kaymayı engeller */
+}
+
+/* İletişim İçindeki Linkler */
+.accordion-inner-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 15px;
+}
+
+.accordion-inner-links a {
+    color: #ffcc00 !important; /* İkonlar ve linkler sarı */
+    text-decoration: none;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.panel-mini-logo {
+    height: 60px !important;
+    margin-bottom: 10px;
+}
+
+/* --- CETINWEB PANEL GÜNCELLEMELERİ --- */
+
+/* 1. Çarpi İşaretini Yerine Sabitleme */
+.close-menu {
+    position: absolute !important;
+    top: 20px !important;
+    right: 20px !important; /* Panelin dışına kaçmasını engeller */
+    color: #ffb300 !important;
+    font-size: 1.6rem !important;
+    cursor: pointer !important;
+    z-index: 10002 !important;
+    transition: 0.3s;
+}
+
+/* 2. Hakkımızda ve İletişim Arasındaki Boşluğu Daraltma */
+.menu-inner li { 
+    margin-bottom: 12px !important; /* Satır arası mesafeyi kısalttık */
+}
+
+.accordion-item {
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 0px !important; /* Akordiyonların ekstra boşluğunu sildik */
+}
+
+.accordion-link {
+    padding: 8px 0 !important; /* Tıklama alanını dikeyde daralttık */
+}
+
+/* 3. Akordiyon İçerik Ayarı (Yazının Alta İnmesi İçin) */
+.accordion-content {
+    display: block !important;
+    max-height: 0;
+    width: 100% !important;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+}
+
+.accordion-content p {
+    padding: 12px 15px !important;
+    margin: 0 !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    color: #cbd5e1 !important;
+    text-align: left !important; /* Sağa kayma hatasını bitirir */
+}
+
+/* 4. Alt Çizgi (HR) Mesafesi */
+.menu-inner hr { 
+    margin: 5px 0 15px 0 !important; 
+    border-top: 1px solid #1e293b !important;
+}
+
+/* 5. İletişim Linkleri */
+.accordion-inner-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 15px;
+}
+
+.accordion-inner-links a {
+    color: #ffcc00 !important;
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
