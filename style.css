@@ -23,12 +23,12 @@ body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--dar
     height: 340px; 
     margin: 0; 
     padding: 0;
-    overflow: hidden; /* Taşmaları engellemek için */
+    overflow: hidden; 
 }
 .hero-image { 
     width: 100% !important; 
     height: 100% !important; 
-    /* 'cover' resmi kutuyu tamamen dolduracak şekilde büyütür, boşluk bırakmaz */
+
     background: url('image/sandvic.png') center/cover no-repeat !important; 
     display: block;
 }
@@ -657,7 +657,7 @@ body.compact-menu #cart-count {
     display: flex !important;
     flex-wrap: wrap !important;
     justify-content: center !important;
-    gap: 15px !important; /* Kutuların arası ferahlasın */
+    gap: 15px !important; 
     max-width: 600px !important;
     margin: 0 auto !important;
 }
@@ -665,13 +665,13 @@ body.compact-menu #cart-count {
 /* BÜYÜTÜLMÜŞ ÇERÇEVE TASARIMI */
 .payment-card {
     background: #ffffff !important;
-    width: 105px !important; /* Çerçeveyi büyüttük */
-    height: 60px !important; /* Çerçeveyi büyüttük */
-    border-radius: 14px !important; /* Köşeleri biraz daha yumuşattık */
+    width: 105px !important; 
+    height: 60px !important; 
+    border-radius: 14px !important; 
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 4px !important; /* Logoya daha çok alan kalsın diye azalttık */
+    padding: 4px !important; 
     box-shadow: 0 6px 18px rgba(0,0,0,0.3) !important;
     overflow: hidden !important;
     transition: all 0.3s ease !important;
@@ -680,53 +680,53 @@ body.compact-menu #cart-count {
 
 /* Logo İçerik Ayarları */
 .payment-card img {
-    width: 95% !important; /* Kutunun içini %95 dolsun */
+    width: 95% !important; 
     height: 95% !important;
     object-fit: contain !important;
     display: block !important;
     transition: transform 0.3s ease !important;
 }
 
-/* KÜÇÜK LOGOLARI ÖZEL ZOOM İLE PATLATMA */
-/* Çerçeve büyüdüğü için scale değerlerini de dengeledik */
+
+
 .payment-card img[src*="metropol"], 
 .payment-card img[src*="edenred"],
 .payment-card img[src*="pluxee"],
 .payment-card img[src*="tokenflex"],
 .payment-card img[src*="iwallet"] {
-    transform: scale(1.5) !important; /* Bu logoları daha da belirgin yaptık */
+    transform: scale(1.5) !important; 
 }
 
-/* Hover Efekti: Kart hem büyüsün hem yukarı çıksın */
+
 .payment-card:hover {
     transform: translateY(-8px) scale(1.05) !important;
     box-shadow: 0 10px 25px rgba(255, 179, 0, 0.4) !important;
 }
 
-/* MOBİL GÖRÜNÜM (Cihazlara Tam Uyum) */
+
 @media (max-width: 480px) {
     .payment-grid {
         display: grid !important;
-        grid-template-columns: repeat(3, 1fr) !important; /* Mobilde 3'lü daha okunaklı olur */
+        grid-template-columns: repeat(3, 1fr) !important; 
         padding: 0 10px !important;
         gap: 12px !important;
     }
     .payment-card {
         width: 100% !important;
-        height: 55px !important; /* Mobilde de çerçeveyi yüksek tuttuk */
+        height: 55px !important; 
     }
 }
 
 .footer-bottom {
     display: flex !important;
-    flex-direction: column !important; /* Yazıları alt alta diz */
-    align-items: center !important;    /* Yatayda tam merkeze al */
+    flex-direction: column !important; 
+    align-items: center !important;    
     justify-content: center !important;
     width: 100% !important;
     text-align: center !important;
     margin-top: 30px !important;
     padding-top: 20px !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.1) !important; /* Üstten ince bir çizgi ayırır, şık durur */
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important; 
 }
 
 .cetinweb-signature {
@@ -742,18 +742,18 @@ body.compact-menu #cart-count {
     color: #94a3b8 !important;
 }
 
-/* 1. Başlık ve Logoyu Kapsayan Ana Kutu */
+
 .section-header {
     display: flex !important;
-    justify-content: center !important; /* Yazıyı tam ortada tutar */
+    justify-content: center !important; 
     align-items: center !important;
     width: 100% !important;
-    min-height: 130px !important; /* Logo büyük olduğu için alanı genişlettik */
-    position: relative !important; /* Logoyu buna göre konumlandırır */
+    min-height: 130px !important; 
+    position: relative !important; 
     margin-bottom: 30px !important;
 }
 
-/* 2. Kategori Başlığı (Menüler vb.) */
+
 .section-header h2 {
     margin: 0 !important;
     text-align: center !important;
@@ -762,34 +762,34 @@ body.compact-menu #cart-count {
     z-index: 1;
 }
 
-/* 3. SAĞDAKİ DEV LOGO */
+
 .side-logo {
     position: absolute !important;
-    right: 5px !important; /* En sağa sabitledik */
+    right: 5px !important; 
     z-index: 2;
     
-    /* LOGO BOYUTU - Buradan istediğin kadar büyütebilirsin */
+  
     height: 120px !important; 
     width: auto !important;
     object-fit: contain !important;
     
-    /* Hizalama ve Efektler */
-    margin-top: -10px !important; /* Logoyu daha yukarı çeker */
+   
+    margin-top: -10px !important; 
     margin-right: -50px;
     margin-bottom: -25px;
     filter: drop-shadow(0 6px 12px rgba(0,0,0,0.3));
     
-    /* Başlangıçta Görünmez (Fade-in Hazırlığı) */
+
     opacity: 0;
     transform: translateY(15px);
     
-    /* Hem CSS Animation hem JS Transition desteği */
+
     animation: fadeInLogo 1.5s ease-in forwards;
-    animation-delay: 2.5s; /* Açılış ekranından sonra başlar */
+    animation-delay: 2.5s; 
     transition: all 0.5s ease !important;
 }
 
-/* Üstüne gelince hafif büyüme efekti */
+
 .side-logo:hover {
     transform: scale(1.1) !important;
 }
@@ -809,7 +809,7 @@ body.compact-menu #cart-count {
 /* 5. Mobil Ayarları */
 @media (max-width: 480px) {
     .side-logo {
-        height: 100px !important; /* Mobilde biraz daha dengeli boyut */
+        height: 100px !important; 
         right: 0px !important;
         margin-top: -20px !important;
     }
@@ -818,12 +818,12 @@ body.compact-menu #cart-count {
     }
 }
 
-/* Genel Panel Ayarları */
+
 .menu-side {
-    background: #1e293b; /* Koyu lacivert tonu */
+    background: #1e293b; 
 }
 
-/* Akordiyon Bozulma Engelleyici */
+
 .accordion-item {
     display: block !important;
     width: 100% !important;
@@ -845,7 +845,7 @@ body.compact-menu #cart-count {
     transition: transform 0.3s ease;
 }
 
-/* Yazının Altına Açılması İçin Kritik Ayar */
+
 .accordion-content {
     display: block !important;
     max-height: 0;
@@ -862,10 +862,10 @@ body.compact-menu #cart-count {
     font-size: 14px;
     line-height: 1.6;
     color: #cbd5e1;
-    text-align: left; /* Sağa kaymayı engeller */
+    text-align: left; 
 }
 
-/* İletişim İçindeki Linkler */
+
 .accordion-inner-links {
     display: flex;
     flex-direction: column;
@@ -874,7 +874,7 @@ body.compact-menu #cart-count {
 }
 
 .accordion-inner-links a {
-    color: #ffcc00 !important; /* İkonlar ve linkler sarı */
+    color: #ffcc00 !important; 
     text-decoration: none;
     font-size: 15px;
     display: flex;
@@ -887,13 +887,13 @@ body.compact-menu #cart-count {
     margin-bottom: 10px;
 }
 
-/* --- CETINWEB PANEL GÜNCELLEMELERİ --- */
 
-/* 1. Çarpi İşaretini Yerine Sabitleme */
+
+
 .close-menu {
     position: absolute !important;
     top: 20px !important;
-    right: 20px !important; /* Panelin dışına kaçmasını engeller */
+    right: 20px !important; 
     color: #ffb300 !important;
     font-size: 1.6rem !important;
     cursor: pointer !important;
@@ -901,22 +901,22 @@ body.compact-menu #cart-count {
     transition: 0.3s;
 }
 
-/* 2. Hakkımızda ve İletişim Arasındaki Boşluğu Daraltma */
+
 .menu-inner li { 
-    margin-bottom: 12px !important; /* Satır arası mesafeyi kısalttık */
+    margin-bottom: 12px !important; 
 }
 
 .accordion-item {
     display: block !important;
     width: 100% !important;
-    margin-bottom: 0px !important; /* Akordiyonların ekstra boşluğunu sildik */
+    margin-bottom: 0px !important; 
 }
 
 .accordion-link {
-    padding: 8px 0 !important; /* Tıklama alanını dikeyde daralttık */
+    padding: 8px 0 !important; 
 }
 
-/* 3. Akordiyon İçerik Ayarı (Yazının Alta İnmesi İçin) */
+
 .accordion-content {
     display: block !important;
     max-height: 0;
@@ -933,16 +933,16 @@ body.compact-menu #cart-count {
     font-size: 14px !important;
     line-height: 1.5 !important;
     color: #cbd5e1 !important;
-    text-align: left !important; /* Sağa kayma hatasını bitirir */
+    text-align: left !important; 
 }
 
-/* 4. Alt Çizgi (HR) Mesafesi */
+
 .menu-inner hr { 
     margin: 5px 0 15px 0 !important; 
     border-top: 1px solid #1e293b !important;
 }
 
-/* 5. İletişim Linkleri */
+
 .accordion-inner-links {
     display: flex;
     flex-direction: column;
@@ -968,33 +968,33 @@ body.compact-menu #cart-count {
 .hero-image { 
     width: 100% !important; 
     height: 100%; 
-    /* Arka plan resminin boşluk kalmadan kaplaması için 'cover' şart */
+   
     background: url('https://images.unsplash.com/photo-1550507992-eb63ffee0847?w=800') center/cover no-repeat; 
     display: block;
 }
 
-/* --- CETINWEB PANEL SABİT ALT BİLGİ --- */
 
-/* Çizgiden itibaren olan kısmı kapsayan alan */
+
+
 .info-footer {
     position: absolute !important;
     bottom: 0 !important;
     left: 0 !important;
     width: 100% !important;
-    background: #2d3748 !important; /* Panelinin arka plan rengiyle aynı yap */
+    background: #2d3748 !important; 
     padding: 20px !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.1) !important; /* O meşhur çizgi */
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important; 
     z-index: 10 !important;
 }
 
-/* Menü listesinin bu sabit alana çarpmaması için altına boşluk veriyoruz */
+
 .menu-inner {
-    padding-bottom: 150px !important; /* Alt kısım ne kadar yer kaplıyorsa o kadar pay bırak */
+    padding-bottom: 150px !important; 
     overflow-y: auto !important;
     max-height: calc(100vh - 200px) !important;
 }
 
-/* İkonlar ve yazıların yan yana düzgün durması için */
+
 .info-footer li {
     display: flex !important;
     align-items: center !important;
@@ -1006,14 +1006,14 @@ body.compact-menu #cart-count {
 }
 
 .info-footer li i {
-    color: #FFB300 !important; /* İkonların sarı kalması için */
+    color: #FFB300 !important; 
 }
 
-/* CetinWeb Logo Ortalama ve Büyütme */
+
 .panel-mini-logo {
     display: block !important;
-    margin: 0 auto 15px auto !important; /* Üstten 0, sağ/sol otomatik, alttan 15px boşluk */
-    width: 200px !important; /* Genişliği buradan artırabilirsin, 100px-120px arası ideal durur */
+    margin: 0 auto 15px auto !important; 
+    width: 200px !important; 
     height: auto !important;
-    border-radius: 50%; /* Eğer logon yuvarlaksa bunu ekle, değilse silebilirsin */
+    border-radius: 50%; 
 }

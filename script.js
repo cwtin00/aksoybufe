@@ -1,4 +1,6 @@
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
+localStorage.removeItem('cart'); 
+localStorage.clear();            
+let cart = [];                   
 
 const menuData = {
     "Menüler": [
@@ -242,16 +244,16 @@ function sendOrder() {
 }
 
 window.onload = () => {
-    // --- CETINWEB SEPET SIFIRLAMA PROTOKOLÜ ---
-    localStorage.removeItem('cart'); // Tarayıcı hafızasını temizle
-    cart = [];                       // JS içindeki sepeti boşalt
-    // -----------------------------------------
+
+    localStorage.removeItem('cart'); 
+    cart = [];                       
+
 
     renderCategories();
     const firstCat = document.querySelector('.cat-item');
     if(firstCat) loadCategory('Menüler', firstCat);
     
-    // Sepet artık boş olduğu için burası ekrana 0 basacak
+ 
     updateCart();
 
     setTimeout(() => {
@@ -315,48 +317,45 @@ document.getElementById('toggler')?.addEventListener('change', function() {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    // 1. Sayfadaki tüm h2 (kategori başlıklarını) buluyoruz
-    // Eğer başlıkların class'ı farklıysa (örneğin .category-title) parantez içini ona göre değiştir
+
+
     const categoryHeaders = document.querySelectorAll('h2');
 
     categoryHeaders.forEach(header => {
-        // 2. Başlık ve Logo için yeni bir kapsayıcı div oluşturuyoruz
+  
         const headerContainer = document.createElement('div');
         headerContainer.className = 'section-header';
 
-        // 3. Başlığı mevcut yerinden alıp bu yeni kapsayıcının içine koyuyoruz
+   
         header.parentNode.insertBefore(headerContainer, header);
         headerContainer.appendChild(header);
 
-        // 4. Logo elementini oluşturuyoruz
+
         const logoImg = document.createElement('img');
-        logoImg.src = 'image/Aksoy Meydan Büfe.png'; // Logonun klasör yolu ve adı
+        logoImg.src = 'image/Aksoy Meydan Büfe.png'; 
         logoImg.className = 'side-logo';
         logoImg.alt = 'Aksoy Meydan Büfe Logo';
 
-        // 5. Logoyu başlığın yanına (kapsayıcının içine) ekliyoruz
+  
         headerContainer.appendChild(logoImg);
 
-        // Logo elementini oluşturduğumuz yerin altına ekle:
-logoImg.style.opacity = "0"; // Başta görünmez
+
+logoImg.style.opacity = "0"; 
 setTimeout(() => {
     logoImg.style.transition = "opacity 1.5s ease";
     logoImg.style.opacity = "1";
-}, 2500); // 2.5 saniye sonra (açılış ekranı süresi) belirsin
+}, 2500); 
     });
 
     console.log("CetinWeb: Kategori logoları başarıyla yerleştirildi.");
 });
 
-/**
- * Akordiyon menüleri kontrol eden fonksiyon.
- * Birini açtığında diğerini otomatik kapatır.
- */
+
 function toggleAccordion(contentId, arrowId) {
     const content = document.getElementById(contentId);
     const arrow = document.getElementById(arrowId);
     
-    // Aynı anda sadece birinin açık kalması için diğerlerini kapat
+
     const allContents = document.querySelectorAll('.accordion-content');
     const allArrows = document.querySelectorAll('.arrow');
     
@@ -367,7 +366,7 @@ function toggleAccordion(contentId, arrowId) {
         }
     });
 
-    // Tıklananı aç veya kapat
+
     if (content.style.maxHeight) {
         content.style.maxHeight = null;
         arrow.style.transform = "rotate(0deg)";
