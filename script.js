@@ -96,6 +96,23 @@ const menuData = {
     ]
 };
 
+    // Sayfa yüklendiğinde sepeti sıfırlayan CetinWeb fonksiyonu
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. JS içindeki sepet dizisini/objesini boşalt
+    sepet = []; 
+
+    // 2. Arayüzdeki sepet sayacını sıfırla
+    const sepetSayaci = document.querySelector('.cart-count'); // Sayacın class ismi neyse onu yaz
+    if (sepetSayaci) {
+        sepetSayaci.textContent = '0';
+    }
+
+    // 3. Eğer localStorage kullanıyorsan onu da temizle (opsiyonel)
+    // localStorage.removeItem('sepetVerisi'); 
+    
+    console.log("Sepet her ihtimale karşı sıfırlandı kanka!");
+});
+
 function renderCategories() {
     const nav = document.getElementById('category-list');
     if(!nav) return;
