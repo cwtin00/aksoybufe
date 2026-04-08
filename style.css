@@ -7,7 +7,7 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--dark); line-height: 1.5; overflow-x: hidden; }
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--dark); line-height: 1.5; overflow-x: hidden !important; }
 
 #splash-screen {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -945,4 +945,18 @@ body.compact-menu #cart-count {
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.hero-header { 
+    width: 100% !important; 
+    height: 340px; 
+    overflow: hidden; /* Dışarı taşan her şeyi gizler */
+}
+
+.hero-image { 
+    width: 100% !important; 
+    height: 100%; 
+    /* Arka plan resminin boşluk kalmadan kaplaması için 'cover' şart */
+    background: url('https://images.unsplash.com/photo-1550507992-eb63ffee0847?w=800') center/cover no-repeat; 
+    display: block;
 }
