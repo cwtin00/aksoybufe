@@ -29,7 +29,7 @@ body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--dar
     width: 100% !important; 
     height: 100% !important; 
 
-    background: url('image/sandvic.png') center/cover no-repeat !important; 
+    background: url('image/heronew.jpg') center/cover no-repeat !important; 
     display: block;
 }
 .hero-overlay {
