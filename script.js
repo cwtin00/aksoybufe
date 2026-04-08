@@ -96,22 +96,7 @@ const menuData = {
     ]
 };
 
-    // Sayfa yüklendiğinde sepeti sıfırlayan CetinWeb fonksiyonu
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. JS içindeki sepet dizisini/objesini boşalt
-    sepet = []; 
 
-    // 2. Arayüzdeki sepet sayacını sıfırla
-    const sepetSayaci = document.querySelector('.cart-count'); // Sayacın class ismi neyse onu yaz
-    if (sepetSayaci) {
-        sepetSayaci.textContent = '0';
-    }
-
-    // 3. Eğer localStorage kullanıyorsan onu da temizle (opsiyonel)
-    // localStorage.removeItem('sepetVerisi'); 
-    
-    console.log("Sepet her ihtimale karşı sıfırlandı kanka!");
-});
 
 function renderCategories() {
     const nav = document.getElementById('category-list');
@@ -257,12 +242,18 @@ function sendOrder() {
 }
 
 window.onload = () => {
+    // --- CETINWEB SEPET SIFIRLAMA PROTOKOLÜ ---
+    localStorage.removeItem('cart'); // Tarayıcı hafızasını temizle
+    cart = [];                       // JS içindeki sepeti boşalt
+    // -----------------------------------------
+
     renderCategories();
     const firstCat = document.querySelector('.cat-item');
     if(firstCat) loadCategory('Menüler', firstCat);
+    
+    // Sepet artık boş olduğu için burası ekrana 0 basacak
     updateCart();
 
-   
     setTimeout(() => {
         const splash = document.getElementById('splash-screen');
         const cartWrapper = document.getElementById('cart-header-wrapper');
@@ -274,14 +265,12 @@ window.onload = () => {
             setTimeout(() => {
                 splash.style.display = 'none';
                 
-                
                 if(cartWrapper) {
                     cartWrapper.style.setProperty('display', 'flex', 'important');
                     setTimeout(() => { cartWrapper.style.opacity = '1'; }, 50);
                 }
                 
                 if(hamburger) {
-                    
                     hamburger.style.setProperty('display', 'block', 'important');
                     setTimeout(() => { hamburger.style.opacity = '1'; }, 50);
                 }
@@ -388,3 +377,4 @@ function toggleAccordion(contentId, arrowId) {
         arrow.style.transform = "rotate(180deg)";
     }
 }
+
