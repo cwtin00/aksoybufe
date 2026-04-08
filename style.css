@@ -960,3 +960,48 @@ body.compact-menu #cart-count {
     background: url('https://images.unsplash.com/photo-1550507992-eb63ffee0847?w=800') center/cover no-repeat; 
     display: block;
 }
+
+/* --- CETINWEB PANEL SABİT ALT BİLGİ --- */
+
+/* Çizgiden itibaren olan kısmı kapsayan alan */
+.info-footer {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    background: #2d3748 !important; /* Panelinin arka plan rengiyle aynı yap */
+    padding: 20px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important; /* O meşhur çizgi */
+    z-index: 10 !important;
+}
+
+/* Menü listesinin bu sabit alana çarpmaması için altına boşluk veriyoruz */
+.menu-inner {
+    padding-bottom: 150px !important; /* Alt kısım ne kadar yer kaplıyorsa o kadar pay bırak */
+    overflow-y: auto !important;
+    max-height: calc(100vh - 200px) !important;
+}
+
+/* İkonlar ve yazıların yan yana düzgün durması için */
+.info-footer li {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin-bottom: 10px !important;
+    list-style: none !important;
+    color: white !important;
+    font-size: 14px !important;
+}
+
+.info-footer li i {
+    color: #FFB300 !important; /* İkonların sarı kalması için */
+}
+
+/* CetinWeb Logo Ortalama ve Büyütme */
+.panel-mini-logo {
+    display: block !important;
+    margin: 0 auto 15px auto !important; /* Üstten 0, sağ/sol otomatik, alttan 15px boşluk */
+    width: 200px !important; /* Genişliği buradan artırabilirsin, 100px-120px arası ideal durur */
+    height: auto !important;
+    border-radius: 50%; /* Eğer logon yuvarlaksa bunu ekle, değilse silebilirsin */
+}
