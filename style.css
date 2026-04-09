@@ -1219,37 +1219,34 @@ body.compact-menu #cart-count {
     height: auto;
     filter: drop-shadow(0 0 5px rgba(255,255,255,0.1)); /* Logoya hafif bir parlama */
 }
-/* Sağda veya solda kalan tüm başıboş logoları gizle (Sadece footer içindekileri) */
-.modern-footer .panel-mini-logo, 
-.modern-footer img[alt*="Logo"], 
-.modern-footer .seal-logo {
-    display: none !important;
-}
-
-/* İsmi tam ortaya al ve premium yap */
-.vip-signature-seal {
+.pm-signature {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 0 20px 0;
-    background-color: transparent; /* Beyaz blok oluşmasın diye */
-}
-
-.vip-fullname {
-    font-family: 'Playfair Display', serif; /* Eğer yüklü değilse Montserrat olur */
-    font-size: 32px;
-    font-style: italic;
-    color: #ffffff !important;
-    margin: 0 !important;
-    letter-spacing: 2px;
     text-align: center;
+    padding: 20px 0;
+    clear: both;
 }
 
-.divider-line {
-    width: 60px;
+.pm-text {
+    font-family: 'Inter', sans-serif; /* Sitedeki diğer fontlarla uyumlu olur */
+    font-size: 11px; /* Küçük ama okunur */
+    color: rgba(255, 255, 255, 0.4); /* Hafif silik, elit durur */
+    text-transform: uppercase; /* Kurumsal hava katar */
+    letter-spacing: 2px; /* Harf arası açık olsun ki sıkışık durmasın */
+    margin: 0;
+}
+
+.pm-text span {
+    color: rgba(255, 255, 255, 0.8); /* İsim bir tık daha belirgin olsun */
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+/* Altına çok minik bir çizgi (opsiyonel, istersen silebilirsin) */
+.pm-signature::after {
+    content: '';
+    display: block;
+    width: 20px;
     height: 1px;
     background: rgba(255, 255, 255, 0.2);
-    margin: 15px auto 0 auto;
+    margin: 10px auto 0 auto;
 }
