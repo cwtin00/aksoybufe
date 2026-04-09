@@ -1261,66 +1261,32 @@ body.compact-menu #cart-count {
 }
 
 
-.modern-footer img[alt*="Logo"], 
-.panel-mini-logo,
-.footer img, 
-.footer .seal-logo {
+/* 1. Sağdaki inatçı logoyu her yerden siler */
+.modern-footer .panel-mini-logo, 
+.modern-footer img[src*="Aksoy"], 
+.modern-footer .seal-logo {
     display: none !important;
 }
 
-
-.pm-signature-dark {
+/* 2. Yan yana, ufak ve elit imza */
+.simple-footer-signature {
     width: 100%;
-    background-color: #1a1f3a; 
-    padding: 30px 0 10px 0; 
     text-align: center;
-    clear: both; 
+    padding: 15px 0;
+    background: transparent;
 }
 
-
-.pm-container {
-    max-width: 800px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-
-.pm-fullname {
-    font-family: 'Inter', sans-serif; 
-    font-size: 32px; 
-    font-weight: 800; 
-    color: #ffffff; 
-    margin: 0;
-    letter-spacing: 2px; 
-    text-transform: uppercase;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
-}
-
-
-.pm-divider-line {
-    width: 60px; 
-    height: 1px;
-    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.5), transparent); 
-    margin: 10px auto;
-}
-
-.pm-jobtitle {
+.simple-footer-signature p {
     font-family: 'Inter', sans-serif;
-    font-size: 11px; 
-    font-weight: 400; 
-    color: rgba(255, 255, 255, 0.4); 
+    font-size: 12px; /* Küçük ve kibar */
+    color: rgba(255, 255, 255, 0.5); /* Hafif silik, kurumsal */
     margin: 0;
-    letter-spacing: 3px; 
-    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block; /* Yan yana durmalarını garanti eder */
 }
 
-
-.copyright {
-    margin-top: 20px !important;
-    font-size: 11px !important;
-    color: rgba(255, 255, 255, 0.3) !important;
-    letter-spacing: 1px !important;
+.simple-footer-signature p span {
+    color: #ffffff; /* İsim bir tık daha beyaz ve belirgin */
+    font-weight: 600;
+    margin-left: 4px;
 }
