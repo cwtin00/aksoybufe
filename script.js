@@ -250,18 +250,16 @@ function sendOrder() {
 }
 
 window.onload = () => {
-
     localStorage.removeItem('cart'); 
-    cart = [];                       
-
+    cart = []; 
 
     renderCategories();
     const firstCat = document.querySelector('.cat-item');
     if(firstCat) loadCategory('Menüler', firstCat);
     
- 
     updateCart();
 
+    // Splash Screen ve Logo Kontrolü
     setTimeout(() => {
         const splash = document.getElementById('splash-screen');
         const cartWrapper = document.getElementById('cart-header-wrapper');
@@ -273,6 +271,9 @@ window.onload = () => {
             setTimeout(() => {
                 splash.style.display = 'none';
                 
+                // Sayfa hazır olduğunda her şeyi tek seferde göster
+                document.body.classList.add('app-ready');
+
                 if(cartWrapper) {
                     cartWrapper.style.setProperty('display', 'flex', 'important');
                     setTimeout(() => { cartWrapper.style.opacity = '1'; }, 50);
@@ -286,6 +287,12 @@ window.onload = () => {
         }
     }, 2500);
 };
+
+// KANKA DİKKAT: Alttaki "DOMContentLoaded" içindeki logo ekleme kısmını komple SİLİYORUZ. 
+// O kısım her kategoriye otomatik logo bastığı için tasarımı bozuyor.
+document.addEventListener("DOMContentLoaded", function() {
+    console.log("CetinWeb: Sistem hazır.");
+});
 
 window.addEventListener('scroll', function() {
     if (window.scrollY > 60) {
