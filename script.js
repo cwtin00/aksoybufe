@@ -4,38 +4,19 @@ let cart = [];
 
 const menuData = {
     "Menüler": [
-        { n: "Aksoy 3 Kafadar Menü", p: "875,00 ₺", d: "3 Adet Maxi Karışık Sandviç + Patates + 1 LT İçecek" },
-        { n: "Aksoy 5'li Parti Menü", p: "1.000,00 ₺", d: "5 Adet Maxi Karışık Sandviç + 2 LT İçecek" },
-        { n: "Aksoy Aile Boyu", p: "900,00 ₺", d: "4 Adet Maxi Karışık Sandviç + 2 LT İçecek" },
-        { n: "Aksoy Ayvalık Menü", p: "370,00 ₺", d: "Karışık Ayvalık Tostu + Patates + Ayran" },
-        { n: "Aksoy Dana Burger Menü", p: "370,00 ₺", d: "Dana Hamburger + Patates + Kutu İçecek" },
-        { n: "Aksoy Kanka Menü", p: "675,00 ₺", d: "2 Adet Maxi Karışık Sandviç + Patates + 1 LT İçecek" },
+        { n: "Aksoy 3 Kafadar Menü", p: "875,00 ₺", d: "3 Adet Maxi Karışık Sandviç + 2 Porsiyon Patates Kızartması " },
+        { n: "Aksoy 5'li Parti Menü", p: "1.000,00 ₺", d: "5 Adet Maxi Karışık Sandviç + 2 LT Coca Cola" },
+        { n: "Aksoy Aile Boyu", p: "900,00 ₺", d: "4 Adet Maxi Karışık Sandviç + 2 LT Coca Cola" },
+        { n: "Aksoy Ayvalık Menü", p: "370,00 ₺", d: "Karışık Ayvalık Tostu + Patates Kızartması + Ayran" },
+        { n: "Aksoy Dana Burger Menü", p: "370,00 ₺", d: "Dana Hamburger + Patates Kızartması + Kutu İçecek" },
+        { n: "Aksoy Kanka Menü", p: "675,00 ₺", d: "2 Adet Maxi Karışık Sandviç + 2 Porsiyon Patates Kızartması + 1 LT Coca Cola" },
         { n: "Aksoy King Menü", p: "430,00 ₺", d: "Duble Burger + Patates + Kutu İçecek" },
-        { n: "Aksoy Köfte Menü", p: "380,00 ₺", d: "Izgara Köfte + Patates + Kutu İçecek" },
+        { n: "Aksoy Köfte Menü", p: "380,00 ₺", d: "Yarım Ekmek Izgara Köfte + Patates Kızartması + Kutu İçecek" },
         { n: "Aksoy Öğrenci Dostu Menü", p: "230,00 ₺", d: "Maxi Karışık Sandviç + Küçük Ayran" },
-        { n: "Aksoy Special Menü", p: "370,00 ₺", d: "Maxi Karışık Sandviç + Patates + Kutu İçecek" },
+        { n: "Aksoy Special Menü", p: "370,00 ₺", d: "Maxi Karışık Sandviç + Patates Kızartması + Kutu İçecek" },
         { n: "Aksoy Tatlılı Menü", p: "380,00 ₺", d: "Seçmeli Sandviç + Patates + Tatlı + İçecek" }
     ],
-    "Burgerler": [
-        { n: "Dana Cheeseburger", p: "240,00 ₺", d: "Özel dana köftesi ve erimiş peynir" },
-        { n: "Dana Duble Burger", p: "385,00 ₺", d: "Doyurucu çift katlı dana burger" },
-        { n: "Dana Hamburger", p: "220,00 ₺", d: "Klasik lezzet, özel dana eti" },
-        { n: "Tavuk Burger", p: "200,00 ₺", d: "Çıtır tavuk ve özel sos" },
-        { n: "Tavuk Cheeseburger", p: "215,00 ₺", d: "Çıtır tavuk ve peynir keyfi" }
-    ],
-    "Tavuklar": [
-        { n: "3 Parça Ekmek Arası Izgara Tavuk", p: "275,00 ₺", d: "Izgara tavuk göğsü, taze sebze ve özel sos" },
-        { n: "Yarım Ekmek Soslu Tavuk", p: "210,00 ₺", d: "Özel marine soslu tavuk parçaları" },
-        { n: "Yarım Ekmek Kaşarlı Tavuk", p: "230,00 ₺", d: "Erimiş kaşer peyniri ve ızgara tavuk" }
-    ],
-    "Tostlar": [
-        { n: "Aksoy Sanayi Tostu", p: "215,00 ₺", d: "Bol salçalı, sucuklu ve kaşarlı dev sanayi tostu" },
-        { n: "Karışık Ayvalık Tostu", p: "210,00 ₺", d: "Özel Ayvalık ekmeğine zengin karışık malzeme" },
-        { n: "Peynirli Domatesli Ayvalık Tostu", p: "160,00 ₺", d: "Beyaz peynir ve taze domatesli Ayvalık lezzeti" },
-        { n: "Sucuk Kaşar Ayvalık Tostu", p: "210,00 ₺", d: "Kasap sucuk ve bol kaşarlı Ayvalık tostu" },
-        { n: "Yumurtalı Karışık Ayvalık Tostu", p: "210,00 ₺", d: "Özel karışık malzemeli ve yumurtalı tost" }
-    ],
-    "Sandviçler": [
+        "Sandviçler": [
         { n: "3 Parça Karışık Sandviç", p: "275,00 ₺", d: "Doyurucu 3 parça karışık malzeme" },
         { n: "Duble Karışık Sandviç", p: "245,00 ₺", d: "Çift katlı zengin içerik" },
         { n: "Kaşarlı Patso", p: "190,00 ₺", d: "Çıtır patates ve bol kaşar peyniri" },
@@ -52,11 +33,36 @@ const menuData = {
         { n: "Yarım Ekmek Karışık", p: "210,00 ₺", d: "Standart boy karışık sandviç" },
         { n: "Yumurtalı Karışık Sandviç", p: "230,00 ₺", d: "Taze yumurta eklenmiş karışık lezzet" }
     ],
-    "Köfteler": [
+
+        "Tostlar": [
+        { n: "Aksoy Sanayi Tostu", p: "215,00 ₺", d: "Bol salçalı, sucuklu ve kaşarlı dev sanayi tostu" },
+        { n: "Karışık Ayvalık Tostu", p: "210,00 ₺", d: "Özel Ayvalık ekmeğine zengin karışık malzeme" },
+        { n: "Peynirli Domatesli Ayvalık Tostu", p: "160,00 ₺", d: "Beyaz peynir ve taze domatesli Ayvalık lezzeti" },
+        { n: "Sucuk Kaşar Ayvalık Tostu", p: "210,00 ₺", d: "Kasap sucuk ve bol kaşarlı Ayvalık tostu" },
+        { n: "Yumurtalı Karışık Ayvalık Tostu", p: "210,00 ₺", d: "Özel karışık malzemeli ve yumurtalı tost" }
+    ],
+
+        "Köfteler": [
         { n: "3 Parça Ekmek Arası Izgara Köfte", p: "285,00 ₺", d: "Köfte, domates, yeşillik, soğan" },
         { n: "Yarım Ekmek Izgara Köfte", p: "220,00 ₺", d: "Kaşarlı ızgara köfte, sebze ve soslar" },
         { n: "Yarım Ekmek Kaşarlı Izgara Köfte", p: "240,00 ₺", d: "Özel soslu tavuk, domates, marul, soğan" }
     ],
+
+        "Tavuklar": [
+        { n: "3 Parça Ekmek Arası Izgara Tavuk", p: "275,00 ₺", d: "Izgara tavuk göğsü, taze sebze ve özel sos" },
+        { n: "Yarım Ekmek Soslu Tavuk", p: "210,00 ₺", d: "Özel marine soslu tavuk parçaları" },
+        { n: "Yarım Ekmek Kaşarlı Tavuk", p: "230,00 ₺", d: "Erimiş kaşer peyniri ve ızgara tavuk" }
+    ],
+
+    "Burgerler": [
+        { n: "Dana Cheeseburger", p: "240,00 ₺", d: "Özel dana köftesi ve erimiş peynir" },
+        { n: "Dana Duble Burger", p: "385,00 ₺", d: "Doyurucu çift katlı dana burger" },
+        { n: "Dana Hamburger", p: "220,00 ₺", d: "Klasik lezzet, özel dana eti" },
+        { n: "Tavuk Burger", p: "200,00 ₺", d: "Çıtır tavuk ve özel sos" },
+        { n: "Tavuk Cheeseburger", p: "215,00 ₺", d: "Çıtır tavuk ve peynir keyfi" }
+    ],
+
+
     "Porsiyonlar": [
         { n: "Porsiyon Köfte", p: "320,00 ₺", d: "Özel garnitür ve salata ile servis edilir" }
     ],

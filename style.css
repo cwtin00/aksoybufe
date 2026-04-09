@@ -1039,3 +1039,217 @@ body.compact-menu #cart-count {
     height: auto !important;
     border-radius: 50%; 
 }
+
+.hero-contact {
+    margin-left: -10px;
+    margin-top: 10px; 
+    display: flex;
+    align-items: center;
+}
+
+.hero-contact a {
+    color: #ffb300; 
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+    background: rgba(0, 0, 0, 0.4); 
+    padding: 5px 12px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.hero-contact a i {
+    font-size: 0.9rem;
+}
+
+.hero-contact a:hover {
+    background: #ffb300;
+    color: #000;
+}
+
+.footer-address-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    text-align: center;
+}
+
+.address-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    max-width: 300px;
+}
+
+.address-item i {
+    color: #ffb300; /* Senin sarı tonu */
+    font-size: 1.2rem;
+    margin-top: 3px;
+}
+
+.address-details {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    line-height: 1.4;
+}
+
+.main-street {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.city {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.landmark {
+    font-size: 0.8rem;
+    color: #ffb300; /* Vurgulamak için sarı yaptık */
+    font-style: italic;
+    margin-top: 4px;
+}
+
+.delivery-wrapper {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.delivery-title {
+    color: #ffb300; /* Senin sarı tonu */
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.platform-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.p-btn {
+    text-decoration: none;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Renkler */
+.ys { background: #fa0050; } /* Yemeksepeti */
+.ty { background: #f27a1a; } /* Trendyol */
+.mg { background: #ff6000; } /* Migros */
+
+.p-btn:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.2);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Mobilde butonlar çok sıkışırsa alt alta gelsin */
+@media (max-width: 480px) {
+    .platform-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .p-btn {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap');
+
+.vip-signature-seal {
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column; /* Öğeleri üst üste dizer */
+    align-items: center; /* Yatayda tam merkezler */
+    justify-content: center; /* Dikeyde merkezler */
+    margin: 0 auto;
+}
+
+.vip-fullname {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 500;
+    font-style: italic;
+    color: #ffffff;
+    margin: 0 0 10px 0; /* Alttaki çizgiyle boşluk */
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Aradaki o minik ince çizgi (Logo ile ismi ayırmak için) */
+.divider-line {
+    width: 60px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.3); /* Çok ince ve zarif */
+    margin: 10px auto;
+}
+
+.seal-logo {
+    margin-top: 5px; /* Çizgiyle logo arası boşluk */
+    /* Mevcut logo CSS'indeki float, absolute, left gibi ayarları silmen gerekebilir */
+}
+
+/* Logonun boyutunu buradan ayarla */
+.seal-logo img {
+    width: 80px; /* Logo boyutunu isteğine göre küçült/büyüt */
+    height: auto;
+    filter: drop-shadow(0 0 5px rgba(255,255,255,0.1)); /* Logoya hafif bir parlama */
+}
+/* Sağda veya solda kalan tüm başıboş logoları gizle (Sadece footer içindekileri) */
+.modern-footer .panel-mini-logo, 
+.modern-footer img[alt*="Logo"], 
+.modern-footer .seal-logo {
+    display: none !important;
+}
+
+/* İsmi tam ortaya al ve premium yap */
+.vip-signature-seal {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0 20px 0;
+    background-color: transparent; /* Beyaz blok oluşmasın diye */
+}
+
+.vip-fullname {
+    font-family: 'Playfair Display', serif; /* Eğer yüklü değilse Montserrat olur */
+    font-size: 32px;
+    font-style: italic;
+    color: #ffffff !important;
+    margin: 0 !important;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.divider-line {
+    width: 60px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 15px auto 0 auto;
+}
