@@ -1087,7 +1087,7 @@ body.compact-menu #cart-count {
 }
 
 .address-item i {
-    color: #ffb300; /* Senin sarı tonu */
+    color: #ffb300; 
     font-size: 1.2rem;
     margin-top: 3px;
 }
@@ -1111,7 +1111,7 @@ body.compact-menu #cart-count {
 
 .landmark {
     font-size: 0.8rem;
-    color: #ffb300; /* Vurgulamak için sarı yaptık */
+    color: #ffb300; 
     font-style: italic;
     margin-top: 4px;
 }
@@ -1124,7 +1124,7 @@ body.compact-menu #cart-count {
 }
 
 .delivery-title {
-    color: #ffb300; /* Senin sarı tonu */
+    color: #ffb300; 
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -1152,7 +1152,7 @@ body.compact-menu #cart-count {
     transition: all 0.3s ease;
 }
 
-/* Renkler */
+
 .ys { background: #fa0050; } /* Yemeksepeti */
 .ty { background: #f27a1a; } /* Trendyol */
 .mg { background: #ff6000; } /* Migros */
@@ -1163,7 +1163,7 @@ body.compact-menu #cart-count {
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* Mobilde butonlar çok sıkışırsa alt alta gelsin */
+
 @media (max-width: 480px) {
     .platform-buttons {
         flex-direction: column;
@@ -1183,9 +1183,9 @@ body.compact-menu #cart-count {
     text-align: center;
     padding: 30px 0;
     display: flex;
-    flex-direction: column; /* Öğeleri üst üste dizer */
-    align-items: center; /* Yatayda tam merkezler */
-    justify-content: center; /* Dikeyde merkezler */
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
     margin: 0 auto;
 }
 
@@ -1195,58 +1195,132 @@ body.compact-menu #cart-count {
     font-weight: 500;
     font-style: italic;
     color: #ffffff;
-    margin: 0 0 10px 0; /* Alttaki çizgiyle boşluk */
+    margin: 0 0 10px 0; 
     letter-spacing: 2px;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Aradaki o minik ince çizgi (Logo ile ismi ayırmak için) */
+
 .divider-line {
     width: 60px;
     height: 1px;
-    background: rgba(255, 255, 255, 0.3); /* Çok ince ve zarif */
+    background: rgba(255, 255, 255, 0.3); 
     margin: 10px auto;
 }
 
 .seal-logo {
-    margin-top: 5px; /* Çizgiyle logo arası boşluk */
-    /* Mevcut logo CSS'indeki float, absolute, left gibi ayarları silmen gerekebilir */
+    margin-top: 5px; 
+    
 }
 
-/* Logonun boyutunu buradan ayarla */
+
 .seal-logo img {
-    width: 80px; /* Logo boyutunu isteğine göre küçült/büyüt */
+    width: 80px; 
     height: auto;
-    filter: drop-shadow(0 0 5px rgba(255,255,255,0.1)); /* Logoya hafif bir parlama */
+    filter: drop-shadow(0 0 5px rgba(255,255,255,0.1)); 
 }
-.pm-signature {
+
+
+
+.extra-payment-box {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 10px !important;
+}
+
+.payment-box-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    text-align: center;
-    padding: 20px 0;
-    clear: both;
 }
 
-.pm-text {
-    font-family: 'Inter', sans-serif; /* Sitedeki diğer fontlarla uyumlu olur */
-    font-size: 11px; /* Küçük ama okunur */
-    color: rgba(255, 255, 255, 0.4); /* Hafif silik, elit durur */
-    text-transform: uppercase; /* Kurumsal hava katar */
-    letter-spacing: 2px; /* Harf arası açık olsun ki sıkışık durmasın */
-    margin: 0;
+.p-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; 
+    font-weight: 700;
+    color: #111;
+    text-transform: uppercase;
+    line-height: 1.2;
 }
 
-.pm-text span {
-    color: rgba(255, 255, 255, 0.8); /* İsim bir tık daha belirgin olsun */
-    font-weight: 600;
-    margin-left: 5px;
-}
-
-/* Altına çok minik bir çizgi (opsiyonel, istersen silebilirsin) */
-.pm-signature::after {
-    content: '';
-    display: block;
-    width: 20px;
+.p-line {
+    width: 40%;
     height: 1px;
-    background: rgba(255, 255, 255, 0.2);
-    margin: 10px auto 0 auto;
+    background-color: #eee;
+    margin: 6px 0;
+}
+
+
+@media (max-width: 480px) {
+    .p-text {
+        font-size: 9px;
+    }
+}
+
+
+.modern-footer img[alt*="Logo"], 
+.panel-mini-logo,
+.footer img, 
+.footer .seal-logo {
+    display: none !important;
+}
+
+
+.pm-signature-dark {
+    width: 100%;
+    background-color: #1a1f3a; 
+    padding: 30px 0 10px 0; 
+    text-align: center;
+    clear: both; 
+}
+
+
+.pm-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.pm-fullname {
+    font-family: 'Inter', sans-serif; 
+    font-size: 32px; 
+    font-weight: 800; 
+    color: #ffffff; 
+    margin: 0;
+    letter-spacing: 2px; 
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+}
+
+
+.pm-divider-line {
+    width: 60px; 
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.5), transparent); 
+    margin: 10px auto;
+}
+
+.pm-jobtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; 
+    font-weight: 400; 
+    color: rgba(255, 255, 255, 0.4); 
+    margin: 0;
+    letter-spacing: 3px; 
+    text-transform: uppercase;
+}
+
+
+.copyright {
+    margin-top: 20px !important;
+    font-size: 11px !important;
+    color: rgba(255, 255, 255, 0.3) !important;
+    letter-spacing: 1px !important;
 }
