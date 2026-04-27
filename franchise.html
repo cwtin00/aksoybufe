@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franchise Ön Başvuru | Aksoy Meydan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #FFB300; --dark: #0F172A; --bg: #F8FAFC; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); margin: 0; padding: 20px; color: var(--dark); }
+        .form-container { max-width: 500px; margin: 40px auto; background: white; padding: 30px; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .form-header { text-align: center; margin-bottom: 30px; }
+        .form-header h1 { font-family: 'Montserrat'; font-weight: 900; font-size: 1.8rem; margin: 0; color: var(--dark); }
+        .form-header p { color: #64748B; font-size: 0.9rem; margin-top: 10px; }
+        
+        .input-group { position: relative; margin-bottom: 20px; }
+        .input-group i { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--primary); }
+        .input-group input, .input-group textarea { 
+            width: 100%; padding: 12px 15px 12px 45px; border: 2px solid #F1F5F9; 
+            border-radius: 12px; font-family: inherit; font-size: 0.95rem; outline: none; transition: 0.3s;
+        }
+        .input-group input:focus { border-color: var(--primary); }
+        textarea { resize: none; height: 100px; }
+
+        .submit-btn { 
+            width: 100%; background: var(--dark); color: white; border: none; 
+            padding: 15px; border-radius: 12px; font-weight: 700; font-size: 1rem;
+            cursor: pointer; transition: 0.3s; 
+        }
+        .submit-btn:hover { background: var(--primary); color: var(--dark); transform: translateY(-2px); }
+        .back-btn { display: inline-block; margin-bottom: 20px; text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Geri Dön</a>
+        <div class="form-header">
+            <h1>Franchise Ön Başvuru</h1>
+            <p>Lezzetimizi paylaşmak için ilk adımı atın. Detaylı bilgi için sizinle iletişime geçeceğiz.</p>
+        </div>
+
+        <form onsubmit="event.preventDefault(); alert('Başvurunuz alındı (Simülasyon)');">
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Adınız Soyadınız" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" placeholder="E-posta Adresiniz" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-phone"></i>
+                <input type="tel" placeholder="Telefon Numaranız" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-map-marker-alt"></i>
+                <input type="text" placeholder="Düşündüğünüz Şehir/Bölge" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-pen" style="top: 20px;"></i>
+                <textarea placeholder="Eklemek istediğiniz notlar..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">TALEP GÖNDER</button>
+        </form>
+    </div>
+
+</body>
+</html>
