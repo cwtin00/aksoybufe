@@ -395,4 +395,3 @@ function toggleAccordion(contentId, arrowId) {
     }
 }
 
-
