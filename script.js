@@ -90,7 +90,7 @@ const menuData = {
     ],
     "İçecekler": [
         { n: "1 LT Ayran", p: "90,00 ₺", d: "Soğuk aile boyu ayran" },
-        { n: "1 LT Kola", p: "80,00 ₺", d: "Soğuk şişe Coca-Cola" },
+        { n: "1 LT Kola", p: "90,00 ₺", d: "Soğuk şişe Coca-Cola" },
         { n: "2 LT Kola", p: "100,00 ₺", d: "Soğuk şişe Coca-Cola" },
         { n: "2.5 LT Kola", p: "110,00 ₺", d: "En büyük boy soğuk kola" },
         { n: "Acılı Şalgam", p: "40,00 ₺", d: "Soğuk acılı şalgam suyu" },
