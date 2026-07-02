@@ -4,17 +4,17 @@ let cart = [];
 
 const menuData = {
     "Menüler": [
-        { n: "Aksoy 3 Kafadar Menü", p: "875,00 ₺", d: "3 Adet Maxi Karışık Sandviç + 2 Porsiyon Patates Kızartması " },
-        { n: "Aksoy 5'li Parti Menü", p: "1.000,00 ₺", d: "5 Adet Maxi Karışık Sandviç + 2 LT Coca Cola" },
-        { n: "Aksoy Aile Boyu", p: "900,00 ₺", d: "4 Adet Maxi Karışık Sandviç + 2 LT Coca Cola" },
-        { n: "Aksoy Ayvalık Menü", p: "370,00 ₺", d: "Karışık Ayvalık Tostu + Patates Kızartması + Ayran" },
-        { n: "Aksoy Dana Burger Menü", p: "370,00 ₺", d: "Dana Hamburger + Patates Kızartması + Kutu İçecek" },
-        { n: "Aksoy Kanka Menü", p: "675,00 ₺", d: "2 Adet Maxi Karışık Sandviç + 2 Porsiyon Patates Kızartması + 1 LT Coca Cola" },
-        { n: "Aksoy King Menü", p: "430,00 ₺", d: "Duble Burger + Patates + Kutu İçecek" },
-        { n: "Aksoy Köfte Menü", p: "380,00 ₺", d: "Yarım Ekmek Izgara Köfte + Patates Kızartması + Kutu İçecek" },
-        { n: "Aksoy Öğrenci Dostu Menü", p: "230,00 ₺", d: "Maxi Karışık Sandviç + Küçük Ayran" },
-        { n: "Aksoy Special Menü", p: "370,00 ₺", d: "Maxi Karışık Sandviç + Patates Kızartması + Kutu İçecek" },
-        { n: "Aksoy Tatlılı Menü", p: "380,00 ₺", d: "Seçmeli Sandviç + Patates + Tatlı + İçecek" }
+        { n: "Aksoy 3 Kafadar Menü", p: "950,00 ₺", d: "3 Adet Maxi Karışık Sandviç + 2 Porsiyon Patates Kızartması " },
+        { n: "Aksoy 5'li Parti Menü", p: "1.200,00 ₺", d: "5 Adet Maxi Karışık Sandviç + 2 LT Coca Cola" },
+        { n: "Aksoy Aile Boyu", p: "925,00 ₺", d: "4 Adet Maxi Karışık Sandviç + 2 LT Coca Cola" },
+        { n: "Aksoy Ayvalık Menü", p: "390,00 ₺", d: "Karışık Ayvalık Tostu + Patates Kızartması + Ayran" },
+        { n: "Aksoy Dana Burger Menü", p: "395,00 ₺", d: "Dana Hamburger + Patates Kızartması + Kutu İçecek" },
+        { n: "Aksoy Kanka Menü", p: "725,00 ₺", d: "2 Adet Maxi Karışık Sandviç + 2 Porsiyon Patates Kızartması + 1 LT Coca Cola" },
+        { n: "Aksoy King Menü", p: "475,00 ₺", d: "Duble Burger + Patates + Kutu İçecek" },
+        { n: "Aksoy Köfte Menü", p: "395,00 ₺", d: "Yarım Ekmek Izgara Köfte + Patates Kızartması + Kutu İçecek" },
+        { n: "Aksoy Öğrenci Dostu Menü", p: "240,00 ₺", d: "Maxi Karışık Sandviç + Küçük Ayran" },
+        { n: "Aksoy Special Menü", p: "395,00 ₺", d: "Maxi Karışık Sandviç + Patates Kızartması + Kutu İçecek" },
+        { n: "Aksoy Tatlılı Menü", p: "395,00 ₺", d: "Seçmeli Sandviç + Patates + Tatlı + İçecek" }
     ],
         "Sandviçler": [
         { n: "3 Parça Karışık Sandviç", p: "285,00 ₺", d: "Doyurucu 3 parça karışık malzeme" },
@@ -74,6 +74,7 @@ const menuData = {
     ],
     "Yan Ürünler": [
         { n: "Porsiyon Patates Kızartması", p: "130,00 ₺", d: "Baharatlı çıtır patates" },
+        { n: "Duble Patates Kızartması", p: "190,00 ₺", d: "Baharatlı çıtır patates" },
         { n: "Soğan Halkası (10 Adet)", p: "130,00 ₺", d: "Çıtır panelenmiş soğan halkaları" },
         { n: "Çıtır Tavuk (3 Adet)", p: "130,00 ₺", d: "Lezzetli çıtır tavuk parçaları" }
     ],
