@@ -17,35 +17,41 @@ const menuData = {
         { n: "Aksoy Tatlılı Menü", p: "380,00 ₺", d: "Seçmeli Sandviç + Patates + Tatlı + İçecek" }
     ],
         "Sandviçler": [
-        { n: "3 Parça Karışık Sandviç", p: "275,00 ₺", d: "Doyurucu 3 parça karışık malzeme" },
-        { n: "Duble Karışık Sandviç", p: "245,00 ₺", d: "Çift katlı zengin içerik" },
+        { n: "3 Parça Karışık Sandviç", p: "285,00 ₺", d: "Doyurucu 3 parça karışık malzeme" },
+        { n: "Duble Karışık Sandviç", p: "250,00 ₺", d: "Çift katlı zengin içerik" },
         { n: "Kaşarlı Patso", p: "190,00 ₺", d: "Çıtır patates ve bol kaşar peyniri" },
-        { n: "Maxi Karışık Sandviç", p: "210,00 ₺", d: "Büyük boy karışık sandviç lezzeti" },
+        { n: "Maxi Karışık Sandviç", p: "220,00 ₺", d: "Büyük boy karışık sandviç lezzeti" },
         { n: "Patso", p: "170,00 ₺", d: "Klasik çıtır patatesli sandviç" },
         { n: "Sade Kaşar", p: "160,00 ₺", d: "Erimiş kaşar peyniri keyfi" },
         { n: "Sade Sosis", p: "160,00 ₺", d: "Izgara sosisli klasik lezzet" },
         { n: "Sade Sucuk", p: "160,00 ₺", d: "Kasap sucuklu sandviç" },
         { n: "Sosisli Patso", p: "190,00 ₺", d: "Sosis ve patates kızartması bir arada" },
-        { n: "Sucuk Kaşar", p: "210,00 ₺", d: "Sucuk ve kaşar peyniri uyumu" },
-        { n: "Sucuk Kaşar Yumurta", p: "230,00 ₺", d: "Sucuk, kaşar ve taze yumurta" },
-        { n: "Tam Ekmek Karışık Sandviç", p: "320,00 ₺", d: "Büyük boy doyurucu tam ekmek" },
-        { n: "Tombul Karışık", p: "210,00 ₺", d: "Tombul ekmek arası bol malzeme" },
-        { n: "Yarım Ekmek Karışık", p: "210,00 ₺", d: "Standart boy karışık sandviç" },
-        { n: "Yumurtalı Karışık Sandviç", p: "230,00 ₺", d: "Taze yumurta eklenmiş karışık lezzet" }
+        { n: "Sucuk Kaşar", p: "220,00 ₺", d: "Sucuk ve kaşar peyniri uyumu" },
+        { n: "Sucuk Kaşar Yumurta", p: "240,00 ₺", d: "Sucuk, kaşar ve taze yumurta" },
+        { n: "Tam Ekmek Karışık Sandviç", p: "330,00 ₺", d: "Büyük boy doyurucu tam ekmek" },
+        { n: "Tombul Karışık", p: "220,00 ₺", d: "Tombul ekmek arası bol malzeme" },
+        { n: "Yarım Ekmek Karışık", p: "220,00 ₺", d: "Standart boy karışık sandviç" },
+        { n: "Yumurtalı Karışık Sandviç", p: "240,00 ₺", d: "Taze yumurta eklenmiş karışık lezzet" }
     ],
 
         "Tostlar": [
-        { n: "Aksoy Sanayi Tostu", p: "215,00 ₺", d: "Bol salçalı, sucuklu ve kaşarlı dev sanayi tostu" },
-        { n: "Karışık Ayvalık Tostu", p: "210,00 ₺", d: "Özel Ayvalık ekmeğine zengin karışık malzeme" },
+        { n: "Aksoy Sanayi Tostu", p: "225,00 ₺", d: "Bol salçalı, sucuklu ve kaşarlı dev sanayi tostu" },
+        { n: "Karışık Ayvalık Tostu", p: "220,00 ₺", d: "Özel Ayvalık ekmeğine zengin karışık malzeme" },
         { n: "Peynirli Domatesli Ayvalık Tostu", p: "160,00 ₺", d: "Beyaz peynir ve taze domatesli Ayvalık lezzeti" },
-        { n: "Sucuk Kaşar Ayvalık Tostu", p: "210,00 ₺", d: "Kasap sucuk ve bol kaşarlı Ayvalık tostu" },
-        { n: "Yumurtalı Karışık Ayvalık Tostu", p: "210,00 ₺", d: "Özel karışık malzemeli ve yumurtalı tost" }
+        { n: "Sucuk Kaşar Ayvalık Tostu", p: "220,00 ₺", d: "Kasap sucuk ve bol kaşarlı Ayvalık tostu" },
+        { n: "Yumurtalı Karışık Ayvalık Tostu", p: "240,00 ₺", d: "Özel karışık malzemeli ve yumurtalı tost" }
     ],
 
         "Köfteler": [
-        { n: "3 Parça Ekmek Arası Izgara Köfte", p: "285,00 ₺", d: "Köfte, domates, yeşillik, soğan" },
-        { n: "Yarım Ekmek Izgara Köfte", p: "220,00 ₺", d: "Kaşarlı ızgara köfte, sebze ve soslar" },
-        { n: "Yarım Ekmek Kaşarlı Izgara Köfte", p: "240,00 ₺", d: "Özel soslu tavuk, domates, marul, soğan" }
+        { n: "3 Parça Ekmek Arası Izgara Köfte", p: "295,00 ₺", d: "Köfte, domates, yeşillik, soğan" },
+        { n: "Yarım Ekmek Izgara Köfte", p: "230,00 ₺", d: "Kaşarlı ızgara köfte, sebze ve soslar" },
+        { n: "Yarım Ekmek Kaşarlı Izgara Köfte", p: "250,00 ₺", d: "Özel soslu tavuk, domates, marul, soğan" }
+    ],
+    
+    "Çiğ Köfteler": [
+        { n: "250 Gr Tabakta Garnitürsüz", p: "150,00 ₺", d: "" },
+        { n: "500 Gr Tabakta Garnitürsüz", p: "250,00 ₺", d: "" },
+
     ],
 
         "Tavuklar": [
@@ -55,27 +61,27 @@ const menuData = {
     ],
 
     "Burgerler": [
-        { n: "Dana Cheeseburger", p: "240,00 ₺", d: "Özel dana köftesi ve erimiş peynir" },
-        { n: "Dana Duble Burger", p: "385,00 ₺", d: "Doyurucu çift katlı dana burger" },
-        { n: "Dana Hamburger", p: "220,00 ₺", d: "Klasik lezzet, özel dana eti" },
+        { n: "Dana Cheeseburger", p: "250,00 ₺", d: "Özel dana köftesi ve erimiş peynir" },
+        { n: "Dana Duble Burger", p: "395,00 ₺", d: "Doyurucu çift katlı dana burger" },
+        { n: "Dana Hamburger", p: "230,00 ₺", d: "Klasik lezzet, özel dana eti" },
         { n: "Tavuk Burger", p: "200,00 ₺", d: "Çıtır tavuk ve özel sos" },
-        { n: "Tavuk Cheeseburger", p: "215,00 ₺", d: "Çıtır tavuk ve peynir keyfi" }
+        { n: "Tavuk Cheeseburger", p: "220,00 ₺", d: "Çıtır tavuk ve peynir keyfi" }
     ],
 
 
     "Porsiyonlar": [
-        { n: "Porsiyon Köfte", p: "320,00 ₺", d: "Özel garnitür ve salata ile servis edilir" }
+        { n: "Porsiyon Köfte", p: "340,00 ₺", d: "Özel garnitür ve salata ile servis edilir" }
     ],
     "Yan Ürünler": [
-        { n: "Porsiyon Patates Kızartması", p: "125,00 ₺", d: "Baharatlı çıtır patates" },
-        { n: "Soğan Halkası (10 Adet)", p: "125,00 ₺", d: "Çıtır panelenmiş soğan halkaları" },
-        { n: "Çıtır Tavuk Halkası (3 Adet)", p: "125,00 ₺", d: "Lezzetli çıtır tavuk parçaları" }
+        { n: "Porsiyon Patates Kızartması", p: "130,00 ₺", d: "Baharatlı çıtır patates" },
+        { n: "Soğan Halkası (10 Adet)", p: "130,00 ₺", d: "Çıtır panelenmiş soğan halkaları" },
+        { n: "Çıtır Tavuk (3 Adet)", p: "130,00 ₺", d: "Lezzetli çıtır tavuk parçaları" }
     ],
     "Dondurmalar": [
-        { n: "Maraş Usulü Cup (100ml)", p: "50,00 ₺", d: "Hakiki Maraş dondurması" },
-        { n: "Dondurmalı Çikolata Bar", p: "50,00 ₺", d: "Dondurma ve çikolata uyumu" },
-        { n: "Carte D'or Çikolatalı", p: "60,00 ₺", d: "Yoğun çikolata keyfi" },
-        { n: "Carte D'or Meyve Rüyası", p: "60,00 ₺", d: "Taze meyve parçacıklı dondurma" }
+        { n: "Maraş Usulü Cup (100ml)", p: "60,00 ₺", d: "Hakiki Maraş dondurması" },
+        { n: "Dondurmalı Çikolata Bar", p: "60,00 ₺", d: "Dondurma ve çikolata uyumu" },
+        { n: "Carte D'or Çikolatalı", p: "70,00 ₺", d: "Yoğun çikolata keyfi" },
+        { n: "Carte D'or Meyve Rüyası", p: "70,00 ₺", d: "Taze meyve parçacıklı dondurma" }
     ],
     "Tatlılar": [
         { n: "Kazandibi", p: "100,00 ₺", d: "Karamelize edilmiş nefis sütlü tatlı" },
@@ -83,10 +89,9 @@ const menuData = {
         { n: "Supangle", p: "50,00 ₺", d: "Yoğun çikolatalı ve kek parçalı klasik" }
     ],
     "İçecekler": [
-        { n: "1 LT Ayran", p: "80,00 ₺", d: "Soğuk aile boyu ayran" },
+        { n: "1 LT Ayran", p: "90,00 ₺", d: "Soğuk aile boyu ayran" },
         { n: "1 LT Kola", p: "80,00 ₺", d: "Soğuk şişe Coca-Cola" },
-        { n: "1.5 LT Kola", p: "60,00 ₺", d: "Soğuk şişe Coca-Cola" },
-        { n: "2 LT Kola", p: "95,00 ₺", d: "Soğuk şişe Coca-Cola" },
+        { n: "2 LT Kola", p: "100,00 ₺", d: "Soğuk şişe Coca-Cola" },
         { n: "2.5 LT Kola", p: "110,00 ₺", d: "En büyük boy soğuk kola" },
         { n: "Acılı Şalgam", p: "40,00 ₺", d: "Soğuk acılı şalgam suyu" },
         { n: "Acısız Şalgam", p: "40,00 ₺", d: "Soğuk acısız şalgam suyu" },
@@ -98,8 +103,8 @@ const menuData = {
         { n: "Küçük Ayran", p: "25,00 ₺", d: "Küçük boy soğuk ayran" },
         { n: "Niğde Gazozu", p: "40,00 ₺", d: "Efsane Niğde gazozu" },
         { n: "Soda", p: "30,00 ₺", d: "Sade maden suyu" },
-        { n: "Su", p: "15,00 ₺", d: "500 ml pet şişe su" },
-        { n: "Şişe Fanta", p: "40,00 ₺", d: "Soğuk cam şişe fanta" },
+        { n: "Su", p: "20,00 ₺", d: "500 ml pet şişe su" },
+        { n: "Şişe Fanta", p: "50,00 ₺", d: "Soğuk cam şişe fanta" },
         { n: "Şişe Kola", p: "50,00 ₺", d: "Soğuk cam şişe kola" }
     ]
 };
