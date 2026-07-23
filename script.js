@@ -49,8 +49,11 @@ const menuData = {
     ],
     
     "Çiğ Köfteler": [
+        { n: "1 Kg Çiğ Köfte", p: "375,00 ₺", d: "" },
         { n: "250 Gr Tabakta Garnitürsüz", p: "150,00 ₺", d: "" },
         { n: "500 Gr Tabakta Garnitürsüz", p: "250,00 ₺", d: "" },
+        { n: "Çiğ Köfte + Ayran", p: "90,00 ₺", d: "" },
+        { n: "Mega Çiğ Köfte", p: "140,00 ₺", d: "" },
 
     ],
 
@@ -90,19 +93,19 @@ const menuData = {
         { n: "Supangle", p: "50,00 ₺", d: "Yoğun çikolatalı ve kek parçalı klasik" }
     ],
     "İçecekler": [
-        { n: "1 LT Ayran", p: "90,00 ₺", d: "Soğuk aile boyu ayran" },
-        { n: "1 LT Kola", p: "90,00 ₺", d: "Soğuk şişe Coca-Cola" },
-        { n: "2 LT Kola", p: "100,00 ₺", d: "Soğuk şişe Coca-Cola" },
-        { n: "2.5 LT Kola", p: "110,00 ₺", d: "En büyük boy soğuk kola" },
+        { n: "1 LT Ayran", p: "95,00 ₺", d: "Soğuk aile boyu ayran" },
+        { n: "1 LT Kola", p: "95,00 ₺", d: "Soğuk şişe Coca-Cola" },
+        { n: "2 LT Kola", p: "110,00 ₺", d: "Soğuk şişe Coca-Cola" },
+        { n: "2.5 LT Kola", p: "120,00 ₺", d: "En büyük boy soğuk kola" },
         { n: "Acılı Şalgam", p: "40,00 ₺", d: "Soğuk acılı şalgam suyu" },
         { n: "Acısız Şalgam", p: "40,00 ₺", d: "Soğuk acısız şalgam suyu" },
         { n: "Büyük Ayran", p: "40,00 ₺", d: "Büyük boy soğuk ayran" },
-        { n: "Fuse Tea Şeftali", p: "70,00 ₺", d: "Soğuk şeftali aromalı buzlu çay" },
-        { n: "Kutu Fanta", p: "70,00 ₺", d: "330 ml soğuk kutu fanta" },
-        { n: "Kutu Kola", p: "70,00 ₺", d: "330 ml soğuk kutu kola" },
-        { n: "Kutu Sprite", p: "70,00 ₺", d: "330 ml soğuk kutu sprite" },
+        { n: "Fuse Tea Şeftali", p: "75,00 ₺", d: "Soğuk şeftali aromalı buzlu çay" },
+        { n: "Kutu Fanta", p: "75,00 ₺", d: "330 ml soğuk kutu fanta" },
+        { n: "Kutu Kola", p: "75,00 ₺", d: "330 ml soğuk kutu kola" },
+        { n: "Kutu Sprite", p: "75,00 ₺", d: "330 ml soğuk kutu sprite" },
         { n: "Küçük Ayran", p: "25,00 ₺", d: "Küçük boy soğuk ayran" },
-        { n: "Niğde Gazozu", p: "40,00 ₺", d: "Efsane Niğde gazozu" },
+        { n: "Niğde Gazozu", p: "50,00 ₺", d: "Efsane Niğde gazozu" },
         { n: "Soda", p: "30,00 ₺", d: "Sade maden suyu" },
         { n: "Su", p: "20,00 ₺", d: "500 ml pet şişe su" },
         { n: "Şişe Fanta", p: "50,00 ₺", d: "Soğuk cam şişe fanta" },
