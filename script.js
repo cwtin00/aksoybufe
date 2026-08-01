@@ -1,8 +1,15 @@
+import { database } from "./firebase-config.js";
+
+import {
+    ref,
+    onValue
+} from "https://www.gstatic.com/firebasejs/12.17.0/firebase-database.js";
+
 localStorage.removeItem('cart'); 
 localStorage.clear();            
 let cart = [];                   
 
-const menuData = {
+export const menuData = {
     "Menüler": [
         { n: "Aksoy 3 Kafadar Menü", p: "950,00 ₺", d: "3 Adet Maxi Karışık Sandviç + 2 Porsiyon Patates Kızartması " },
         { n: "Aksoy 5'li Parti Menü", p: "1.200,00 ₺", d: "5 Adet Maxi Karışık Sandviç + 2 LT Coca Cola" },
@@ -113,17 +120,126 @@ const menuData = {
     ]
 };
 
+let currentMenuData = menuData;
+let activeCategory = "";
 
+function listenMenuFromFirebase() {
+    const menuRef = ref(database, "menu");
+
+    onValue(
+        menuRef,
+        snapshot => {
+            const data = snapshot.val();
+
+            if (!data?.categories) {
+                currentMenuData = menuData;
+                showCurrentMenu();
+                return;
+            }
+
+            const firebaseCategories = data.categories;
+            const savedCategoryOrder = Array.isArray(data.categoryOrder)
+                ? data.categoryOrder.filter(Boolean)
+                : Object.keys(firebaseCategories);
+
+            const newMenuData = {};
+
+            savedCategoryOrder.forEach(categoryName => {
+                const category = firebaseCategories[categoryName];
+
+                if (!category?.products) return;
+
+                const savedProductOrder = Array.isArray(category.productOrder)
+                    ? category.productOrder.filter(Boolean)
+                    : [];
+
+                const products = Object.entries(category.products)
+                    .map(([productId, product]) => ({
+                        id: productId,
+                        ...product
+                    }))
+                    .sort((a, b) => {
+                        const aIndex = savedProductOrder.indexOf(a.id);
+                        const bIndex = savedProductOrder.indexOf(b.id);
+
+                        if (aIndex === -1 && bIndex === -1) {
+                            return (a.order ?? 9999) - (b.order ?? 9999);
+                        }
+
+                        if (aIndex === -1) return 1;
+                        if (bIndex === -1) return -1;
+
+                        return aIndex - bIndex;
+                    })
+                    .map(product => ({
+                        n: product.name || "",
+                        p: formatFirebasePrice(product.price),
+                        d: product.description || ""
+                    }));
+
+                newMenuData[categoryName] = products;
+            });
+
+            currentMenuData = newMenuData;
+            showCurrentMenu();
+        },
+        error => {
+            console.error("Firebase menü okuma hatası:", error);
+
+            currentMenuData = menuData;
+            showCurrentMenu();
+        }
+    );
+}
+
+function formatFirebasePrice(value) {
+    const number = Number(value);
+
+    if (!Number.isFinite(number)) {
+        return "0,00 ₺";
+    }
+
+    return number.toLocaleString("tr-TR", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    }) + " ₺";
+}
+
+function showCurrentMenu() {
+    renderCategories();
+
+    const categories = Object.keys(currentMenuData);
+
+    if (categories.length === 0) {
+        const title = document.getElementById("current-category-title");
+        const list = document.getElementById("product-list");
+
+        if (title) title.innerText = "Menü";
+        if (list) list.innerHTML = "<p>Henüz ürün bulunmuyor.</p>";
+
+        return;
+    }
+
+    const categoryToOpen = categories.includes(activeCategory)
+        ? activeCategory
+        : categories[0];
+
+    const firstCategoryElement = [...document.querySelectorAll(".cat-item")]
+        .find(element => element.textContent.trim() === categoryToOpen);
+
+    loadCategory(categoryToOpen, firstCategoryElement);
+}
 
 function renderCategories() {
     const nav = document.getElementById('category-list');
     if(!nav) return;
-    nav.innerHTML = Object.keys(menuData).map((cat, i) => `
+    nav.innerHTML = Object.keys(currentMenuData).map((cat, i) => `
         <div class="cat-item ${i===0?'active':''}" onclick="loadCategory('${cat}', this)">${cat}</div>
     `).join('');
 }
 
 function loadCategory(cat, el) {
+        activeCategory = cat;
     document.querySelectorAll('.cat-item').forEach(i => i.classList.remove('active'));
     if(el) el.classList.add('active');
     
@@ -133,7 +249,7 @@ function loadCategory(cat, el) {
     const list = document.getElementById('product-list');
     if(!list) return;
     
-    list.innerHTML = menuData[cat].map(item => {
+    list.innerHTML = currentMenuData[cat].map(item => {
         
         const safeName = item.n.replace(/'/g, "\\'");
         
@@ -262,9 +378,7 @@ window.onload = () => {
     localStorage.removeItem('cart'); 
     cart = []; 
 
-    renderCategories();
-    const firstCat = document.querySelector('.cat-item');
-    if(firstCat) loadCategory('Menüler', firstCat);
+listenMenuFromFirebase();
     
     updateCart();
 
@@ -399,3 +513,10 @@ function toggleAccordion(contentId, arrowId) {
     }
 }
 
+window.loadCategory = loadCategory;
+window.addToCart = addToCart;
+window.changeQty = changeQty;
+window.removeFromCart = removeFromCart;
+window.toggleCart = toggleCart;
+window.sendOrder = sendOrder;
+window.toggleAccordion = toggleAccordion;

@@ -6,7 +6,7 @@
     --muted: #64748B;
 }
 
-/* Senin en üstteki kodunu şu şekilde mermi gibi yapalım */
+
 * { 
     margin: 0; 
     padding: 0; 
@@ -21,13 +21,13 @@ html, body {
     color: var(--dark); 
     line-height: 1.5; 
     
-    /* YATAY KAYMAYI ÖLDÜREN KISIM */
+  
     width: 100% !important;
     max-width: 100% !important;
     overflow-x: hidden !important; 
     position: relative !important;
     
-    /* Mobilde parmakla sağa sola gereksiz esnemeyi engeller */
+
     touch-action: pan-y !important; 
 }
 
